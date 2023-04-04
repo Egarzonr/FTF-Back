@@ -34,8 +34,6 @@ $ npm install
 
 ## Running the app
 
-# The application will start on port 3000
-
 ```bash
 # development
 $ npm run start
@@ -44,6 +42,8 @@ $ npm run start
 $ npm run start:dev
 
 ```
+
+## The application will start on `http://localhost:3000/`
 
 ## Test
 
