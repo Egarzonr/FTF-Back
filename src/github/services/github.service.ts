@@ -11,15 +11,11 @@ export class GithubService {
     const url = `${GITHUB_CONFIG.baseUrl}/repos/${GITHUB_CONFIG.owner}/${GITHUB_CONFIG.repo}/commits`;
     try {
       const { data } = await firstValueFrom(
-        this.httpService
-          .get(url, {
-            headers: { Authorization: `Bearer ${GITHUB_CONFIG.token}` },
-          })
-          .pipe(
-            catchError(() => {
-              throw 'An error happened!';
-            }),
-          ),
+        this.httpService.get(url).pipe(
+          catchError(() => {
+            throw 'An error happened!';
+          }),
+        ),
       );
       return data;
     } catch (error) {
