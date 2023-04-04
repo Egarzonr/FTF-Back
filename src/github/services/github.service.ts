@@ -9,7 +9,6 @@ export class GithubService {
 
   async getCommitHistory() {
     const url = `${GITHUB_CONFIG.baseUrl}/repos/${GITHUB_CONFIG.owner}/${GITHUB_CONFIG.repo}/commits`;
-
     try {
       const { data } = await firstValueFrom(
         this.httpService
